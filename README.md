@@ -4,12 +4,12 @@
 
 APP_ENV=dev 
 APP_SECRET=e11e64a1066929acd7fda0a7e1ab41e7
-DATABASE_URL=postgres://user:password@symfony_rest_api/symfony_rest_api_db
+DATABASE_URL=postgres://user:password@postgres-symfony-rest-api/symfony_rest_api_db
 
 2. Запустить команду make up
-3. Перейдите в контейнер docker exec -it php-fpm-calculate-and-payment bash и запустить команду composer install
-4. Далелее выполните команду php bin/console doctrine:migrations:migrate
-5. Выполнте команду php bin/console default-data:set
+3. Перейдите в контейнер "docker exec -it php-fpm-symfony-rest-api bash" и запустить команду "composer install"
+4. Далее выполните команду "php bin/console doctrine:migrations:migrate"
+5. Выполните команду "php bin/console default-data:set"
 
 
 # Технической задание - Написать Symfony REST-приложение для расчета цены продукта и проведения оплаты

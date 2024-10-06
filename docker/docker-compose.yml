@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  php-fpm-calculate-and-payment:
-    container_name: php-fpm-symfony_rest_api
+  php-fpm-symfony-rest-api:
+    container_name: php-fpm-symfony-rest-api
     build:
       context: ./../
       dockerfile: ./docker/php-fpm/Dockerfile
@@ -15,8 +15,8 @@ services:
       - /var/www/vendor/
       - ./../:/var/www/
 
-  nginx-calculate-and-payment:
-    container_name: nginx-symfony_rest_api
+  nginx-symfony-rest-api:
+    container_name: nginx-symfony-rest-api
     build:
       context: ./nginx
     ports:
@@ -24,10 +24,10 @@ services:
     volumes:
       - ..:/var/www:rw
     depends_on:
-      - php-fpm-symfony_rest_api
+      - php-fpm-symfony-rest-api
 
-  postgres-calculate-and-payment:
-    container_name: postgres-symfony_rest_api
+  postgres-symfony-rest-api:
+    container_name: postgres-symfony-rest-api
     build:
       context: ./postgres
     ports:
